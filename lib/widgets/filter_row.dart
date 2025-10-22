@@ -1,4 +1,4 @@
-// lib/widgets/filter_row.dart
+
 import 'package:flutter/material.dart';
 import '../theme/design_system.dart';
 
@@ -6,7 +6,7 @@ class FilterRow extends StatelessWidget {
   final bool byAuthorSelected;
   final void Function() onAuthor;
   final void Function() onTitle;
-  // filterIconAsset 保留为可选字符串（若以后需要可用 Image.asset 手动加载）
+
   final String? filterIconAsset;
 
   const FilterRow({
@@ -23,7 +23,7 @@ class FilterRow extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: AppDim.pagePadding, vertical: 8),
       child: Row(
         children: [
-          // 使用系统 icon 代替 svg overlay
+
           const Icon(Icons.filter_list, size: 20, color: Colors.black54),
           const SizedBox(width: 8),
           Text('Sort by', style: AppText.subtitle),
@@ -42,10 +42,7 @@ class FilterRow extends StatelessWidget {
             selectedColor: AppColors.accentBg,
           ),
           const Spacer(),
-          IconButton(
-            icon: const Icon(Icons.more_vert, size: 20),
-            onPressed: () {},
-          ),
+          
         ],
       ),
     );

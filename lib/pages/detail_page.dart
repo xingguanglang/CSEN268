@@ -85,7 +85,7 @@ class DetailPage extends StatelessWidget {
 
               // 作者
               PaddedText(
-                text: 'by ${book.author}',
+                text: '${book.author}',
                 style: AppText.subtitle,
                 padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 6),
               ),

@@ -39,8 +39,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Book Club Home'),
         backgroundColor: Colors.white,
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0,
+         actions: [
+          IconButton(
+            icon: const Icon(Icons.person_outline), 
+            onPressed: () {},
+            tooltip: 'Profile',
+          ),
+  ],
       ),
       backgroundColor: AppColors.background,
       body: SafeArea(

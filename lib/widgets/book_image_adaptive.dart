@@ -6,13 +6,10 @@ import '../models/book.dart';
 import '../theme/design_system.dart';
 
 /// BookImageAdaptive
-/// - 读取 rasterAsset 的真实像素尺寸（从 AssetManifest 加载 bytes 并 decode）
-/// - 根据传入的 maxWidth 计算高度： h = maxWidth * (intrinsicH / intrinsicW)
-/// - 显示 loading 占位直到尺寸读取完成
-/// - 支持 heroTag（用于 shared element transitions）
+
 class BookImageAdaptive extends StatefulWidget {
   final Book book;
-  final double maxWidth; // 可用宽度（通常屏宽 - padding * 2）
+  final double maxWidth; 
   final BoxFit fit;
   final String? heroTag;
 
@@ -56,9 +53,11 @@ class _BookImageAdaptiveState extends State<BookImageAdaptive> {
 
       if (intrinsicW > 0) {
         final computedH = widget.maxWidth * (intrinsicH / intrinsicW);
-        if (mounted) setState(() {
+        if (mounted) {
+          setState(() {
           _height = computedH;
         });
+        }
       } else {
         if (mounted) setState(() => _failed = true);
       }
@@ -88,7 +87,7 @@ class _BookImageAdaptiveState extends State<BookImageAdaptive> {
         borderRadius: BorderRadius.circular(AppDim.cardRadius),
         child: Container(
           width: w,
-          height: h ?? (w * 1.5), // 临时占位高度，真实高度会被替换
+          height: h ?? (w * 1.5), 
           color: AppColors.grayLight,
           child: (h == null)
               ? _placeholder(w, w * 1.5)
